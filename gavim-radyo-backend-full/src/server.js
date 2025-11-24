@@ -3,7 +3,7 @@ const auth = require('./auth');
 const drive = require('./drive');
 const app = express();
 app.use(express.json());
-
+app.use(express.urlencoded({ extended: true }));
 app.get('/', (req,res)=>res.json({status:"Gavim Radyo API OK"}));
 
 app.post('/login', auth.login);
